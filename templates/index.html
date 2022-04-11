@@ -1,0 +1,31 @@
+{% extends 'base-boostrap.html' %}
+{% block content %}
+    <table id="data" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Street</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Phone</th>
+            <th>Website</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for b in breweries %}
+            <tr>
+                <td>{{ b.name }}</td>
+                <td>{{ b.brewery_type }}</td>
+                <td>{{ b.street }}</td>
+                <td>{{ b.city }}</td>
+                <td>{{ b.state }}</td>
+                <td>{{ b.postal_code }}</td>
+                <td>{{ b.phone }}</td>
+                <td><a href="{{ b.website_url }}">{{ b.website_url }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
